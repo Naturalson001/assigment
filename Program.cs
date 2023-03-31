@@ -2,11 +2,7 @@
 namespace Parameters
 {
     class Progress
-    {
-
-
-
-
+    { 
         static void Main(string[] args)
 
         {
@@ -26,22 +22,18 @@ namespace Parameters
                     System.Console.WriteLine(" C: Please Enter a number :");
                     var C = Convert.ToInt32(Console.ReadLine());
 
-                    bool input = Inputs(A, B, C);
-                    if (input)
-                    {
-                        System.Console.WriteLine("valid input");
-                    }
-                    else
-                    {
-                        System.Console.WriteLine("invalid input");
-                    }
-                    break;
+                    
+
+
+                    Console.WriteLine(Inputs(A, B, C)); 
+                        break;
 
                 }
                 catch (System.FormatException ex)
-                {
+                { 
                     Console.WriteLine(" invalid input please enter a number");
                 }
+                
             }
 
             Console.Read();
@@ -50,25 +42,22 @@ namespace Parameters
 
         static bool Inputs(int A, int B, int C)
         {
-            if (C == 0 && A >= 14 && B >= 14)
+            if (C == 0 && (A >= 14) && (B >= 14))
             {
-
-
                 return true;
-
-
             }
             else if (C > 0 && A > 2 * (C + 1) && B > 2 * (C + 1))
             {
-
-
                 return true;
             }
+
             else
             {
+                if (A < 0 || B < 0 || C < 0)
+                {
+                    Console.WriteLine("Negetavie number are invalid!");
+                }
                 return false;
-
-
 
             }
 
